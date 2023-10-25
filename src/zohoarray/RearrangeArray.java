@@ -17,7 +17,7 @@ public class RearrangeArray {
 		return arr;
 	}
 
-	private static int[] rearrange(int[] arr) {
+	private static int[] reArrange(int[] arr) {
 		int[] tempArr = new int[arr.length];
 		int start = 0;
 		int end = arr.length - 1;
@@ -42,7 +42,7 @@ public class RearrangeArray {
 	public static void main(String[] args) {
 		int[] nums = getNumbers();
 		Arrays.sort(nums);
-		int[] rearrangedNums = rearrange(nums);
+		int[] rearrangedNums = reArrange(nums);
 		printArray(rearrangedNums);
 	}
 }
