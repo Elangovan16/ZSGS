@@ -4,19 +4,18 @@ import java.util.Scanner;
 
 public class GrandChild {
 	private static String[][] getFamilyMember() {
-		try (Scanner sc = new Scanner(System.in)) {
-			System.out.println("Enter family count");
-			int n = sc.nextInt();
-			sc.nextLine();
-			String[][] arr = new String[n][2];
-			for (int i = 0; i < arr.length; i++) {
-				System.out.println("Enter son name and father name");
-				for (int j = 0; j < 2; j++) {
-					arr[i][j] = sc.nextLine();
-				}
-			}
-			return arr;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter family count");
+		int n = sc.nextInt();
+		sc.nextLine();
+		String[][] arr = new String[n][2];
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print("Enter son name : ");
+			arr[i][0] = sc.nextLine();
+			System.out.print("Enter father name : ");
+			arr[i][1] = sc.nextLine();
 		}
+		return arr;
 	}
 
 	private static int findSon(String[][] family, String grandFather) {
@@ -59,15 +58,16 @@ public class GrandChild {
 	}
 
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-
 		String[][] family = getFamilyMember();
 		printFamily(family);
+		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the grandFather name to find his grandchild");
 		String grandFather = sc.nextLine();
-		sc.close();
+
 		int count = findSon(family, grandFather);
 
 		System.out.println(grandFather + " has " + count + " grandchildren");
+		sc.close();
 	}
+
 }
