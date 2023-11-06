@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class ReverseLeftHalfTriangle {
 	public static void main(String[] args) {
-		try (Scanner sc = new Scanner(System.in)) {
-			System.out.println("Enter the Number : ");
-			int n = Integer.parseInt(sc.nextLine());
-			printPattern(n);
-		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Number : ");
+		int n = Integer.parseInt(sc.nextLine());
+		printPattern(n);
 	}
 
 	private static void printPattern(int n) {

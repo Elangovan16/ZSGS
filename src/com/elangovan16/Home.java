@@ -22,7 +22,6 @@ public class Home {
 		for (File f : packageList) {
 			System.out.println(index++ + ". " + f.getName());
 		}
-		System.out.println();
 	}
 
 	private static void loadClass(File packageFile, ArrayList<File> classList) {
@@ -56,6 +55,7 @@ public class Home {
 	}
 
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
 		ArrayList<File> packageList = new ArrayList<File>();
 		ArrayList<File> classList = new ArrayList<File>();
@@ -63,31 +63,27 @@ public class Home {
 		loadPackage(packageList);
 
 		do {
+
 			displayPackage(packageList);
 			System.out.println("-1 for Exit... ");
 			System.out.println("Enter Valid Number : ");
-			if (sc.hasNextInt()) {
-				int n = sc.nextInt();
-				if (n > 0 && n <= packageList.size()) {
-					File packageFile = packageList.get(n - 1);
-					loadClass(packageFile, classList);
-					displayClass(classList);
-					System.out.println("\nEnter Valid Number : ");
-					int fileIndex = sc.nextInt();
-					if (fileIndex > 0 && fileIndex <= classList.size()) {
-						invokeClass(classList.get(fileIndex - 1));
-					}
-				} else if (n > packageList.size()) {
-					System.out.print("\nEnter an Valid Input");
-					continue;
-				} else if (n == -1) {
-					flag = false;
+			int n = sc.nextInt();
+			if (n > 0 && n <= packageList.size()) {
+				File packageFile = packageList.get(n - 1);
+				loadClass(packageFile, classList);
+				displayClass(classList);
+				System.out.println("\nEnter Valid Number : ");
+				int fileIndex = sc.nextInt();
+				if (fileIndex > 0 && fileIndex <= classList.size()) {
+					invokeClass(classList.get(fileIndex - 1));
 				}
-			} else {
-				System.out.println("Invalid input. Please enter a valid number.");
+			} else if (n > packageList.size()) {
+				System.out.print("\nEnter an Valid Input");
+				continue;
+			} else if (n == -1) {
+				flag = false;
 			}
 		} while (flag);
-		sc.close();
-	}
 
+	}
 }

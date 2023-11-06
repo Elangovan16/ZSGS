@@ -4,19 +4,18 @@ import java.util.Scanner;
 
 public class ReverseTriangleStar {
 	public static void main(String[] args) {
-		try (Scanner sc = new Scanner(System.in)) {
-			System.out.println("Enter the Number : ");
-			int n = Integer.parseInt(sc.nextLine());
-			printPyramid(n);
-		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Number : ");
+		int n = Integer.parseInt(sc.nextLine());
+		printPyramid(n);
 	}
 
 	private static void printPyramid(int n) {
-		for(int i=n;i>=1;i--) {
-			for(int j=1;j<=n-i;j++) {
+		for (int i = n; i >= 1; i--) {
+			for (int j = 1; j <= n - i; j++) {
 				System.out.print(" ");
 			}
-			for(int k=1;k<=i;k++) {
+			for (int k = 1; k <= i; k++) {
 				System.out.print("* ");
 			}
 			System.out.println();

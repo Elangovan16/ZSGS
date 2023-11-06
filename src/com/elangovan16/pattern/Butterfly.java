@@ -3,12 +3,12 @@ package com.elangovan16.pattern;
 import java.util.Scanner;
 
 public class Butterfly {
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
-		try (Scanner sc = new Scanner(System.in)) {
-			System.out.println("Enter the Number : ");
-			int n = sc.nextInt();
-			printPattern(n);
-		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Number : ");
+		int n = sc.nextInt();
+		printPattern(n);
 	}
 
 	private static void printPattern(int n) {

@@ -3,12 +3,11 @@ package com.elangovan16.array;
 import java.util.Scanner;
 
 public class GrandChild {
-	static Scanner sc = new Scanner(System.in);
-
 	private static String[][] getFamilyMember() {
-
+		Scanner sc = new Scanner(System.in);
 		System.out.println("\nEnter family count");
-		int n = Integer.parseInt(sc.nextLine());
+		int n = sc.nextInt();
+		sc.nextLine();
 		String[][] arr = new String[n][2];
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print("Enter son name : ");
@@ -58,6 +57,7 @@ public class GrandChild {
 	}
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 		String[][] family = getFamilyMember();
 		printFamily(family);
 		System.out.println("\nEnter the grandFather name to find his grandchild");
@@ -67,5 +67,4 @@ public class GrandChild {
 
 		System.out.println(grandFather + " has " + count + " grandchildren");
 	}
-
 }

@@ -18,15 +18,14 @@ public class PatternX {
 	}
 
 	public static void main(String[] args) {
-		try (Scanner sc = new Scanner(System.in)) {
-			System.out.println("\nEnter the Word");
-			String word = sc.nextLine();
+		Scanner sc = new Scanner(System.in);
+		System.out.println("\nEnter the Word");
+		String word = sc.nextLine();
 
-			if (word.length() % 2 != 0) {
-				xPattern(word);
-			} else {
-				System.out.println("0");
-			}
+		if (word.length() % 2 != 0) {
+			xPattern(word);
+		} else {
+			System.out.println("0");
 		}
 	}
 }

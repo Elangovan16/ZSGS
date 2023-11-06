@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class PalindromicNumber {
 	public static void main(String[] args) {
-		try (Scanner sc = new Scanner(System.in)) {
-			System.out.println("Enter the Number : ");
-			int n = Integer.parseInt(sc.nextLine());
-			printPyramid(n);
-		}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the Number : ");
+		int n = Integer.parseInt(sc.nextLine());
+		printPyramid(n);
 	}
 
 	private static void printPyramid(int n) {

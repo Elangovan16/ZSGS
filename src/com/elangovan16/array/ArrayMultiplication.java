@@ -14,19 +14,19 @@ public class ArrayMultiplication {
 	}
 
 	private static int[][] getMatrix() {
-		try (Scanner sc = new Scanner(System.in)) {
-			System.out.println("Enter Number of Row");
-			int row = Integer.parseInt(sc.nextLine());
-			System.out.println("Enter Number of Column");
-			int column = Integer.parseInt(sc.nextLine());
-			int[][] arr = new int[row][column];
-			for (int i = 0; i < row; i++) {
-				for (int j = 0; j < column; j++) {
-					arr[i][j] = Integer.parseInt(sc.nextLine());
-				}
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Number of Row");
+		int row = sc.nextInt();
+		System.out.println("Enter Number of Column");
+		int column = sc.nextInt();
+		int[][] arr = new int[row][column];
+		for (int i = 0; i < row; i++) {
+			for (int j = 0; j < column; j++) {
+				arr[i][j] = sc.nextInt();
 			}
-			return arr;
 		}
+		return arr;
+
 	}
 
 	private static int[][] arrayMultiplication(int[][] a, int[][] b) {
