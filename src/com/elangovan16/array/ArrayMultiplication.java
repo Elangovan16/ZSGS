@@ -1,4 +1,4 @@
-package zohoarray;
+package com.elangovan16.array;
 
 import java.util.Scanner;
 
@@ -16,13 +16,13 @@ public class ArrayMultiplication {
 	private static int[][] getMatrix() {
 		try (Scanner sc = new Scanner(System.in)) {
 			System.out.println("Enter Number of Row");
-			int row = sc.nextInt();
+			int row = Integer.parseInt(sc.nextLine());
 			System.out.println("Enter Number of Column");
-			int column = sc.nextInt();
+			int column = Integer.parseInt(sc.nextLine());
 			int[][] arr = new int[row][column];
 			for (int i = 0; i < row; i++) {
 				for (int j = 0; j < column; j++) {
-					arr[i][j] = sc.nextInt();
+					arr[i][j] = Integer.parseInt(sc.nextLine());
 				}
 			}
 			return arr;

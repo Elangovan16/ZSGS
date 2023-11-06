@@ -1,14 +1,14 @@
-package pattern;
+package com.elangovan16.pattern;
 
 import java.util.Scanner;
 
-public class Pyramid2 {
+public class ReverseTriangleStar {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the Number : ");
-		int n = sc.nextInt();
-		sc.close();
-		printPyramid(n);
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Enter the Number : ");
+			int n = Integer.parseInt(sc.nextLine());
+			printPyramid(n);
+		}
 	}
 
 	private static void printPyramid(int n) {
@@ -17,7 +17,7 @@ public class Pyramid2 {
 				System.out.print(" ");
 			}
 			for(int k=1;k<=i;k++) {
-				System.out.print(i+" ");
+				System.out.print("* ");
 			}
 			System.out.println();
 		}

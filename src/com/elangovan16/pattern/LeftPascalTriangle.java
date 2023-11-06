@@ -1,14 +1,14 @@
-package pattern;
+package com.elangovan16.pattern;
 
 import java.util.Scanner;
 
-public class Pattern8 {
+public class LeftPascalTriangle {
 	public static void main(String[] args) {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the Number : ");
-		int n = sc.nextInt();
-		sc.close();
-		printPattern(n);
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Enter the Number : ");
+			int n = Integer.parseInt(sc.nextLine());
+			printPattern(n);
+		}
 	}
 
 	private static void printPattern(int n) {

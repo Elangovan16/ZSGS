@@ -1,20 +1,20 @@
-package zohoarray;
+package com.elangovan16.array;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class RearrangeArray {
 	private static int[] getNumbers() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter number of Elements");
-		int n = sc.nextInt();
-		int[] arr = new int[n];
-		System.out.println("Enter the number");
-		for (int i = 0; i < n; i++) {
-			arr[i] = sc.nextInt();
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Enter number of Elements");
+			int n = Integer.parseInt(sc.nextLine());
+			int[] arr = new int[n];
+			System.out.println("Enter the number");
+			for (int i = 0; i < n; i++) {
+				arr[i] = Integer.parseInt(sc.nextLine());
+			}
+			return arr;
 		}
-		sc.close();
-		return arr;
 	}
 
 	private static int[] reArrange(int[] arr) {

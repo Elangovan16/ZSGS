@@ -1,13 +1,14 @@
-package zohoarray;
+package com.elangovan16.array;
 
 import java.util.Scanner;
 
 public class GrandChild {
+	static Scanner sc = new Scanner(System.in);
+
 	private static String[][] getFamilyMember() {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter family count");
-		int n = sc.nextInt();
-		sc.nextLine();
+
+		System.out.println("\nEnter family count");
+		int n = Integer.parseInt(sc.nextLine());
 		String[][] arr = new String[n][2];
 		for (int i = 0; i < arr.length; i++) {
 			System.out.print("Enter son name : ");
@@ -33,7 +34,6 @@ public class GrandChild {
 		}
 	}
 
-	@SuppressWarnings("unused")
 	private static int findCount(String[][] family, String[] father) {
 		int count = 0;
 		for (int i = 0; i < father.length; i++) {
@@ -60,14 +60,12 @@ public class GrandChild {
 	public static void main(String[] args) {
 		String[][] family = getFamilyMember();
 		printFamily(family);
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the grandFather name to find his grandchild");
+		System.out.println("\nEnter the grandFather name to find his grandchild");
 		String grandFather = sc.nextLine();
 
 		int count = findSon(family, grandFather);
 
 		System.out.println(grandFather + " has " + count + " grandchildren");
-		sc.close();
 	}
 
 }
