@@ -10,6 +10,10 @@ public class Question4 {// print pattern
 		String str = sc.nextLine();
 		System.out.println("Enter Rows : ");
 		int n = sc.nextInt();
+		if(n==1) {
+			System.out.println(str);
+			return;
+		}
 		char[][] ans = new char[n][str.length()];
 		int index = 0;
 		int i = 0;
