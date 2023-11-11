@@ -7,57 +7,41 @@ public class Question1 {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Enter the Number : ");
 		int n = sc.nextInt();
-		int maxCount = (n * (n + 1)) / 2;
-		System.out.println(maxCount);
-
-		int[][] ans = new int[n][n];
-		int i = 0;
-		int j = 0;
-		int count = 1;
-		int diff = 0;
-		boolean down = true;
-		boolean up = false;
-		boolean left = false;
-		while (maxCount > 0) {
-			if (down) {
-				ans[i][j] = count++;
-				i++;
-				maxCount--;
-				if (i == n - 1 - diff) {
-					diff++;
-					down = false;
-					up = true;
-				}
-			}
-			if (up) {
-				ans[i][j] = count++;
-				i--;
-				j++;
-				maxCount--;
-				if (j == n - diff) {
-					diff++;
-					up = false;
-					left = true;
-				}
-			}
-			if (left) {
-				ans[i][j] = count++;
-				maxCount--;
-				j--;
-				if (j == n - diff) {
-					diff++;
-					left = false;
-					down = true;
-				}
-			}
-		}
-		printArr(ans);
+		int[][] mat = getTriangleSpiral(n);
+		printMatrix(mat);
 	}
 
-	public static void printArr(int[][] arr) {
-		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length; j++) {
-				System.out.print(arr[i][j] + " ");
+	private static int[][] getTriangleSpiral(int n) {
+		int maxCount = (n * n + 1) / 2;
+		int[][] mat = new int[n][n];
+		int count = 1;
+		int left = 0, right = n - 1;
+		int top = 0, bottom = n - 1;
+		while (left <= right && top <= bottom) {
+			for (int i = top; i <= bottom; i++) {
+				mat[i][i + top] = count++;
+			}
+			bottom--;
+			if (left <= right) {
+				for (int i = bottom; i >= top; i--) {
+					mat[i][right] = count++;
+				}
+				right--;
+			}
+			left++;
+			bottom--;
+			for (int i = right; i >= left; i--) {
+				mat[top][i] = count++;
+			}
+			top++;
+		}
+		return mat;
+	}
+
+	private static void printMatrix(int[][] mat) {
+		for (int[] i : mat) {
+			for (int j : i) {
+				System.out.printf("%2d ", j);
 			}
 			System.out.println();
 		}
