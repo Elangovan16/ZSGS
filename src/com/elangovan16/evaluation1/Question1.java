@@ -10,15 +10,15 @@ public class Question1 {
     }
 
     private static int[][] getTriangleSpiral(int n) {
-        int maxCount=(n*n+1)/2;
         int[][] mat=new int[n][n];
         int count=1;
         int left=0,right=n-1;
         int top=0,bottom=n-1;
-        a:while(left<=right&&top<=bottom) {
+        while(left<=right&&top<=bottom) {
             for (int i = top; i <= bottom; i++) {
                 mat[i][i + top] = count++;
             }
+            left++;
             bottom--;
             if (left <= right) {
                 for (int i = bottom; i >= top; i--) {
@@ -28,10 +28,10 @@ public class Question1 {
             }
             bottom--;
             if (top <= bottom) {
-                left++;
                 for (int i = right; i >= left; i--) {
                     mat[top][i] = count++;
                 }
+                left++;
                 top++;
             }
         }
