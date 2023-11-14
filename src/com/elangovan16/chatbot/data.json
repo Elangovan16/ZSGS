@@ -1,0 +1,24 @@
+{
+  "Press":[
+    {"0":"1.தமிழ்"},
+    {"1":"2.English"},
+    {"2":"3.हिंदी"},
+    {"3":"4.മലയാളം"}
+  ],
+  "Press_1":[
+    {"0":"1.Best Fit Offers"},
+    {"1":"2.Balance & Usage"},
+    {"2":"3.Manage Account"},
+    {"3":"4.Go Digital"},
+    {"4":"5.Recharge"},
+    {"5":"6.Other Details"}
+  ],
+  "Press_1_0":[
+  {"0":"1.151:HOTSTAR,89D + 8GB,30D"},
+  {"1":"2.118:12GB,28 NO SV"},
+  {"2":"3.49:6GB Data,24 Hours"},
+  {"3":"4.24:UNLIMITED Data,1 Hour"},
+  {"4":"5.181:1GB/D,30D.No SV"},
+  {"5":"6.Other Details"}
+]
+}
