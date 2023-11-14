@@ -149,5 +149,58 @@
 		{
 			"3": "4. Stop Data Notification"
 		}
+	],
+	"Press_1_2": [
+		{
+			"0": "1.Activate VAS"
+		},
+		{
+			"1": "2.Deactivate VAS"
+		},
+		{
+			"2": "3.Email ID updation"
+		},
+		{
+			"3": "4.Chotta Credit"
+		},
+		{
+			"4": "5.PUK Number"
+		}
+	],
+	"Press_1_3": [
+		{
+			"0": "1.Download Vi App"
+		},
+		{
+			"1": "2.Download Vic on Whatsapp"
+		},
+		{
+			"2": "3.Download Caller Tune App"
+		},
+		{
+			"3": "4.Download Vi Movies & TV App"
+		}
+	],
+	"Press_1_4": [
+		{
+			"0": "1.Enter MRP"
+		},
+		{
+			"1": "2.Unlimited Packs"
+		},
+		{
+			"2": "3.Data Packs"
+		}
+	],
+	"Press_1_5": [
+		{
+			"0": "1.Find a Vi Store"
+		},
+		{
+			"1": "2.Check 4G Status"
+		},
+		{
+			"2": "3.Quick help"
+		}
 	]
 }
