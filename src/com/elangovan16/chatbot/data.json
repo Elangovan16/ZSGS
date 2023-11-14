@@ -1,24 +1,153 @@
 {
-  "Press":[
-    {"0":"1.தமிழ்"},
-    {"1":"2.English"},
-    {"2":"3.हिंदी"},
-    {"3":"4.മലയാളം"}
-  ],
-  "Press_1":[
-    {"0":"1.Best Fit Offers"},
-    {"1":"2.Balance & Usage"},
-    {"2":"3.Manage Account"},
-    {"3":"4.Go Digital"},
-    {"4":"5.Recharge"},
-    {"5":"6.Other Details"}
-  ],
-  "Press_1_0":[
-  {"0":"1.151:HOTSTAR,89D + 8GB,30D"},
-  {"1":"2.118:12GB,28 NO SV"},
-  {"2":"3.49:6GB Data,24 Hours"},
-  {"3":"4.24:UNLIMITED Data,1 Hour"},
-  {"4":"5.181:1GB/D,30D.No SV"},
-  {"5":"6.Other Details"}
-]
+	"Press": [
+		{
+			"0": "1.தமிழ்"
+		},
+		{
+			"1": "2.English"
+		}
+	],
+	"Press_0": [
+		{
+			"0": "1.சிறந்த பொருட்கள் கிடைக்கும்"
+		},
+		{
+			"1": "2.சராசரி மற்றும் பயன்பாடு"
+		},
+		{
+			"2": "3.கணக்கை நிர்வகிக்க"
+		},
+		{
+			"3": "4.டிஜிட்டல்க்கு செல்"
+		},
+		{
+			"4": "5.ரிசார்ஜ்"
+		},
+		{
+			"5": "6.பிற விவரங்கள்"
+		}
+	],
+	"Press_1": [
+		{
+			"0": "1.Best Fit Offers"
+		},
+		{
+			"1": "2.Balance & Usage"
+		},
+		{
+			"2": "3.Manage Account"
+		},
+		{
+			"3": "4.Go Digital"
+		},
+		{
+			"4": "5.Recharge"
+		},
+		{
+			"5": "6.Other Details"
+		}
+	],
+	"Press_1_0": [
+		{
+			"0": "1.151:HOTSTAR,89D + 8GB,30D"
+		},
+		{
+			"1": "2.118:12GB,28 NO SV"
+		},
+		{
+			"2": "3.49:6GB Data,24 Hours"
+		},
+		{
+			"3": "4.24:UNLIMITED Data,1 Hour"
+		},
+		{
+			"4": "5.181:1GB/D,30D.No SV"
+		},
+		{
+			"5": "6.839:HOTSTAR,3M+2GB/D,84D"
+		},
+		{
+			"6": "7.2999:850GB+UL,365D"
+		},
+		{
+			"7": "8.2899:1.5GB/D+50GB+UL,365D"
+		},
+		{
+			"8": "9.82:SonyLiv,28D + 4GB,14D"
+		},
+		{
+			"9": "10.108:6GB(15D)+Music(3M).NoSV"
+		},
+		{
+			"10": "11.100: 81.75TT, No SV"
+		},
+		{
+			"11": "12.47: CallerTunes,28D"
+		},
+		{
+			"12": "13.19:1GB for 24Hours, No SV"
+		},
+		{
+			"13": "14.39:3GB for 3 Days, No SV*"
+		},
+		{
+			"14": "15.3099:2GB/D+50GB+UL,365D"
+		},
+		{
+			"15": "16.1449:1.5GB/D+30GB+UL,180D"
+		}
+	],
+	"Press_1_0_0": [
+		{
+			"0": "Rs151: Get Disney+ Hotstar Mobile subscription for 89 Days + 8GB Data for 30 Days. No Service Validity."
+		}
+	],
+	"Press_1_0_1": [
+		{
+			"0": "Rs118: Get 12GB Data, valid for 28 days. No service validity."
+		}
+	],
+	"Press_1_0_2": [
+		{
+			"0": "Rs.49:Get 6GB Data for 24 hours. No Service Validity."
+		}
+	],
+	"Press_1_0_3": [
+		{
+			"0": "Rs.24:Get UNLIMITED Data for 1 hour. No Service Validity."
+		}
+	],
+	"Press_1_0_4": [
+		{
+			"0": "Rs181: Get 1GB/Day, valid for 30 days. No Service Validity, No Outgoing SMS."
+		}
+	],
+	"Press_1_1": [
+		{
+			"0": "Account Balance: 0.22\n1.All Balances"
+		},
+		{
+			"1": "2.Internet Usage"
+		},
+		{
+			"2": "3.Last 3 Calls and SMS details"
+		},
+		{
+			"3": "4.Last VAS deductions of last 3 days"
+		}
+	],
+	"Press_1_1_0": [
+		{
+			"0": "1. Total Data usage"
+		},
+		{
+			"1": "2. Daily Data Usage"
+		},
+		{
+			"2": "3. Start Data Notification"
+		},
+		{
+			"3": "4. Stop Data Notification"
+		}
+	]
 }

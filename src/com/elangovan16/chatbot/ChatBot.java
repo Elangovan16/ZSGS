@@ -35,8 +35,8 @@ public class ChatBot {
             String path = backStack.peek();
             try {
                 displayChat(parse(path));
-                System.out.println("Press 0 for go back");
-                System.out.println("Press -1 to Exit");
+                System.out.println("PREV 0");
+                System.out.println("Exit -1");
             }catch(Exception e) {
                 System.out.println("Please Select Correct Number! ");
             }
