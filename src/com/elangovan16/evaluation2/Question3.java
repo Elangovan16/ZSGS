@@ -22,11 +22,15 @@ public class Question3 {
 		HashMap<String,Integer> hm=new HashMap<>();
 		for(int i=0;i<words.size();i++) {
 			String word=words.get(i); 
-			if(!hm.containsKey(words.get(i))) {
-				hm.put(words.get(i), 1);
+			if(!hm.containsKey(word)) {
+				hm.put(word, 1);
 			}
-			
+			else {
+				int count=hm.get(word);
+				hm.put(word, count+1);
+			}
 		}
+		String[] str=new String[hm.size()];
 		return null;
 	}
 
