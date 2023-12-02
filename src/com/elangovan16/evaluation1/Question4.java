@@ -14,12 +14,12 @@ public class Question4 {// print pattern
 			System.out.println(str);
 			return;
 		}
-		char[][] ans = new char[n][str.length()];
+		char[][] ans = new char[n][str.length()/2+1];
 		int index = 0;
 		int i = 0;
 		int j = 0;
 		boolean flag = true;
-		while (true) {
+		while (index<str.length()) {
 			if (flag) {
 				ans[i][j] = str.charAt(index++);
 				i++;
@@ -34,12 +34,9 @@ public class Question4 {// print pattern
 					flag = true;
 				}
 			}
-			if (index == str.length()) {
-				break;
-			}
 		}
 		for (i = 0; i < n; i++) {
-			for (j = 0; j < str.length(); j++) {
+			for (j = 0; j < ans[0].length; j++) {
 				if (ans[i][j] != '\u0000') {
 					System.out.print(ans[i][j] + " ");
 				} else {
