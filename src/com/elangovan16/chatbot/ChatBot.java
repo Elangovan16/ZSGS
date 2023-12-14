@@ -61,12 +61,10 @@ public class ChatBot {
 	}
 
 	public void introduction() {
-		System.out.println();
-		System.out.println("---Send Instructions---");
+		System.out.println("\n---Send Instructions---");
 		System.out.println("MSI-SND: 9876543210");
 		System.out.println("Main Balance: Rs 0.22");
 		System.out.println("UL Validity: 13-01-2024");
-		System.out.println("Select Language : ");
-		System.out.println();
+		System.out.println("Select Language : \n");
 	}
 }
