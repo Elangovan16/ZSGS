@@ -20,8 +20,8 @@ public class ChatBot {
 		introduction();
 		backStack.add("Press");
 		displayChat(parse("Press"));
+		Scanner scan = new Scanner(System.in);
 		do {
-			Scanner scan = new Scanner(System.in);
 			System.out.println();
 			System.out.print("Enter your Option :");
 			index = scan.nextInt();
@@ -45,6 +45,7 @@ public class ChatBot {
 			}
 		} while (index != -1);
 		System.out.println("-----Thank you for using Vodafone care-----");
+		scan.close();
 	}
 
 	private void displayChat(JSONArray jsonArray) {

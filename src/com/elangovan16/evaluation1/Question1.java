@@ -17,25 +17,23 @@ public class Question1 {
 		int left = 0, right = n - 1;
 		int top = 0, bottom = n - 1;
 		while (left <= right && top <= bottom) {
+			
+			for (int i = left; i <= right; i++) {
+				mat[top][i] = count++;
+			}
+			top++;
+			left++;
 			for (int i = top; i <= bottom; i++) {
-				mat[i][i + top] = count++;
+				mat[i][right] = count++;
+			}
+			right--;
+			bottom--;
+			for (int i = bottom; i >= top; i--) {
+				mat[i][i-top+left] = count++;
 			}
 			left++;
 			bottom--;
-			if (left <= right) {
-				for (int i = bottom; i >= top; i--) {
-					mat[i][right] = count++;
-				}
-				right--;
-			}
-			bottom--;
-			if (top <= bottom) {
-				for (int i = right; i >= left; i--) {
-					mat[top][i] = count++;
-				}
-				left++;
-				top++;
-			}
+
 		}
 		return mat;
 	}

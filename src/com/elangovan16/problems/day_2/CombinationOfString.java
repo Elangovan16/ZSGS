@@ -8,20 +8,20 @@ public class CombinationOfString {
 
 	public static void main(String[] args) {
 		CombinationOfString obj = new CombinationOfString();
-		ArrayList<String> combination = new ArrayList<>();
+		ArrayList<String> res = new ArrayList<>();
 		System.out.println("Enter String : ");
 		String str = obj.sc.nextLine();
-		obj.nCr(str, "", combination);
-		System.out.println(combination);
+		obj.combination(str, "", res);
+		System.out.println(res);
 	}
 
-	private void nCr(String cur, String rem, ArrayList<String> combination) {
+	private void combination(String cur, String rem, ArrayList<String> res) {
 		if (cur.isEmpty()) {
-			combination.add("{" + rem + "}");
+			res.add("{" + rem + "}");
 			return;
 		}
-		nCr(cur.substring(1), rem + cur.charAt(0), combination);// pick
-		nCr(cur.substring(1), rem, combination);  //not pick
+		combination(cur.substring(1), rem + cur.charAt(0), res);// pick
+		combination(cur.substring(1), rem, res);  //not pick
 	}
 
 }
