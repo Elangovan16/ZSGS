@@ -24,8 +24,8 @@ public class Question4 {
 
 		System.out.print("Position of Trigger : ");
 		int[] tri = new int[2];
-		tri[0] = obj.sc.nextInt()-1;
-		tri[1] = obj.sc.nextInt()-1;
+		tri[0] = obj.sc.nextInt() - 1;
+		tri[1] = obj.sc.nextInt() - 1;
 
 		System.out.print("Position of Gold : ");
 		int[] gold = new int[2];
