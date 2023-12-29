@@ -1,26 +1,25 @@
-package com.elangovan16.problems.day_2;
+package com.elangovan16.maheshsan.day_2;
 
 import java.util.Scanner;
 
-public class KthSmallestElement {
+public class MaximumGapInArray {
 	Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		KthSmallestElement obj = new KthSmallestElement();
+		MaximumGapInArray obj = new MaximumGapInArray();
 		int[] nums = obj.getNumbers();
 		obj.sortNumber(nums, nums.length);
-		obj.printKthSmallestElement(nums);
+		obj.printMaximumGapInArray(nums);
 	}
 
-	private void printKthSmallestElement(int[] nums) {
-		System.out.println("Enter kth Smallest element : ");
-		int n=sc.nextInt()-1;
-		if(n>=0 && n<=nums.length) {
-			System.out.println("kth Smallest element is : "+ nums[n]);
+	private void printMaximumGapInArray(int[] nums) {
+		int max = 0;
+		for (int i = 1; i < nums.length; i++) {
+			if (nums[i] - nums[i - 1] > max) {
+				max = nums[i] - nums[i - 1];
+			}
 		}
-		else {
-			System.out.println("\nWrong input");
-		}
+		System.out.println("Maximum Gap in Array : " + max);
 	}
 
 	private void sortNumber(int[] nums, int len) {

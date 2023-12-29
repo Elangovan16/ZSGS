@@ -1,4 +1,4 @@
-package com.elangovan16.problems.day_2;
+package com.elangovan16.maheshsan.day_2;
 
 import java.util.Scanner;
 import java.util.Stack;

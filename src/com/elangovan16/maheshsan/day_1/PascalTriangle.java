@@ -1,4 +1,4 @@
-package com.elangovan16.problems.day_1;
+package com.elangovan16.maheshsan.day_1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
