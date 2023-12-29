@@ -44,6 +44,8 @@ public class Question4 {
 		int triToGold = obj.findSteps(gold, tri);
 		if (advenSteps > monSteps) {
 			System.out.println("Minimum number of steps : " + (advenToTri + triToGold));
+			obj.findPath(adven, tri);
+			obj.findPath(tri, gold);
 		} else {
 			System.out.println("Minimum number of steps : " + advenSteps);
 

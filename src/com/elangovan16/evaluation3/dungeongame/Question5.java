@@ -36,10 +36,41 @@ public class Question5 {
 
 		int steps = obj.findSteps(dungeon, gold, adven);
 		if (steps != -1) {
+			obj.findPath(adven, gold, dungeon);
 			System.out.println("Minimum number of steps : " + steps);
 		} else {
 			System.out.println("No possible solution");
 		}
+	}
+
+	private void findPath(int[] adven, int[] gold, char[][] dungeon) {
+		StringBuilder sb = new StringBuilder();
+		sb.append("Path: ");
+
+		while (adven[1] != gold[1]) {
+			sb.append("(" + (adven[0] + 1) + "," + (adven[1] + 1) + ") --> ");
+			if (adven[1] > gold[1] && dungeon[adven[0]][adven[1]] != 'P') {
+				adven[1] = adven[1] - 1;
+			} else if (adven[1] < gold[1] && dungeon[adven[0]][adven[1]] != 'P') {
+				adven[1] = adven[1] + 1;
+			}
+			else {
+				break;
+			}
+		}
+		while (adven[0] != gold[0]) {
+			sb.append("(" + (adven[0] + 1) + "," + (adven[1] + 1) + ") --> ");
+			if (adven[0] > gold[0] && dungeon[adven[0]][adven[1]] != 'P') {
+				adven[0] = adven[0] - 1;
+			} else if (adven[0] < gold[0] && dungeon[adven[0]][adven[1]] != 'P') {
+				adven[0] = adven[0] + 1;
+			}
+			else {
+				break;
+			}
+		}
+		sb.append("(" + (adven[0] + 1) + "," + (adven[1] + 1) + ")");
+		System.out.println(sb.toString());
 	}
 
 	private int findSteps(char[][] dungeon, int[] endPos, int[] curPos) {
