@@ -15,15 +15,16 @@ public class Stock {
 		int profit = 0;
 		int min = stock[0];
 		for (int i = 1; i < n; i++) {
-			int currentStock = stock[i];
-			int currentProfit = currentStock - min;
-			if (currentStock - min > profit) {
-				profit = currentStock - min;
+			int curStock = stock[i];
+			int curProfit = curStock - min;
+			if (curStock - min > profit) {
+				profit = curStock - min;
 			}
-			if (currentProfit < min) {
-				min = currentProfit;
+			if (curProfit < min) {
+				min = curProfit;
 			}
 		}
-		System.out.println("Profit is : " + profit);
+		System.out.println("Max Profit is : " + profit);
+		sc.close();
 	}
 }
