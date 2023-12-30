@@ -1,0 +1,20 @@
+{
+	"COO": [
+		{
+			"repoting manager": "CEO",
+			"name": null
+		}
+	],
+	"CEO": [
+		{
+			"repoting manager": null,
+			"name": null
+		}
+	],
+	"CTO": [
+		{
+			"repoting manager": "CEO",
+			"name": null
+		}
+	]
+}

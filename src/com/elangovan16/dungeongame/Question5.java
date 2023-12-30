@@ -1,4 +1,4 @@
-package com.elangovan16.evaluation3.dungeongame;
+package com.elangovan16.dungeongame;
 
 import java.util.LinkedList;
 import java.util.Queue;

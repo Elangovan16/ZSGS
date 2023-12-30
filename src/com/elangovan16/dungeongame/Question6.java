@@ -1,87 +1,51 @@
-package com.elangovan16.evaluation3.dungeongame;
+package com.elangovan16.dungeongame;
 
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Scanner;
 
-public class Question7 {
+public class Question6 {
 
 	Scanner sc = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		Question7 obj = new Question7();
+		Question6 obj = new Question6();
 
-		char[][] dungeon = obj.getDimension();
-		int[] adven = obj.getAdventurePosition(dungeon);
-		int[] mon = obj.getMonsterPosition(dungeon);
-		int[] tri = obj.getTriggerPosition(dungeon);
-		int[] gold = obj.getGoldPosition(dungeon);
-		obj.addPitsInDungeon(dungeon);
+		System.out.print("Dimension of the dungeon (Row x Column) : ");
+		char[][] dungeon = new char[obj.sc.nextInt()][obj.sc.nextInt()];
+
+		System.out.print("Position of adventurer : ");
+		int[] adven = new int[2];
+		adven[0] = obj.sc.nextInt() - 1;
+		adven[1] = obj.sc.nextInt() - 1;
+
+		System.out.print("Position of Monster : ");
+		int[] mon = new int[2];
+		mon[0] = obj.sc.nextInt() - 1;
+		mon[1] = obj.sc.nextInt() - 1;
+
+		System.out.print("Position of Gold : ");
+		int[] gold = new int[2];
+		gold[0] = obj.sc.nextInt() - 1;
+		gold[1] = obj.sc.nextInt() - 1;
+
+		System.out.print("Enter number of pites : ");
+		int n = obj.sc.nextInt();
+		for (int i = 1; i <= n; i++) {
+			System.out.print("Position of pit " + i + " : ");
+			dungeon[obj.sc.nextInt() - 1][obj.sc.nextInt() - 1] = 'P';
+		}
+
+		dungeon[gold[0]][gold[1]] = 'G';
+		dungeon[adven[0]][adven[1]] = 'A';
 
 		int advenSteps = obj.findSteps(dungeon, gold, adven);
 		int monSteps = obj.findMinSteps(gold, mon);
-		int advenToTri = obj.findSteps(dungeon, tri, adven);
-		int triToGold = obj.findSteps(dungeon, gold, tri);
-		if (advenSteps < monSteps) {
-			System.out.println("Minimum number of steps : " + advenSteps);
+		if (advenSteps != -1 && advenSteps < monSteps) {
 			obj.findPath(adven, gold, dungeon);
-		} else if (advenSteps != -1) {
-			System.out.println("Minimum number of steps : " + (advenToTri + triToGold));
-			obj.findPath(adven, tri, dungeon);
-			obj.findPath(tri, gold, dungeon);
+			System.out.println("Minimum number of steps : " + advenSteps);
 		} else {
 			System.out.println("No possible solution");
-		}
-	}
-
-	private char[][] getDimension() {
-		System.out.print("Dimension of the dungeon (Row x Column) : ");
-		char[][] dungeon = new char[sc.nextInt()][sc.nextInt()];
-		return dungeon;
-	}
-
-	private int[] getAdventurePosition(char[][] dungeon) {
-		System.out.print("Position of adventurer : ");
-		int[] adven = new int[2];
-		adven[0] = sc.nextInt() - 1;
-		adven[1] = sc.nextInt() - 1;
-		dungeon[adven[0]][adven[1]] = 'A';
-		return adven;
-	}
-
-	private int[] getMonsterPosition(char[][] dungeon) {
-		System.out.print("Position of Monster : ");
-		int[] mon = new int[2];
-		mon[0] = sc.nextInt() - 1;
-		mon[1] = sc.nextInt() - 1;
-		dungeon[mon[0]][mon[1]] = 'M';
-		return mon;
-	}
-
-	private int[] getTriggerPosition(char[][] dungeon) {
-		System.out.print("Position of trigger : ");
-		int[] tri = new int[2];
-		tri[0] = sc.nextInt() - 1;
-		tri[1] = sc.nextInt() - 1;
-		dungeon[tri[0]][tri[1]] = 'T';
-		return tri;
-	}
-
-	private int[] getGoldPosition(char[][] dungeon) {
-		System.out.print("Position of gold : ");
-		int[] gold = new int[2];
-		gold[0] = sc.nextInt() - 1;
-		gold[1] = sc.nextInt() - 1;
-		dungeon[gold[0]][gold[1]] = 'G';
-		return gold;
-	}
-
-	private void addPitsInDungeon(char[][] dungeon) {
-		System.out.print("Enter number of pites : ");
-		int n = sc.nextInt();
-		for (int i = 1; i <= n; i++) {
-			System.out.print("Position of pit " + i + " : ");
-			dungeon[sc.nextInt() - 1][sc.nextInt() - 1] = 'P';
 		}
 	}
 
