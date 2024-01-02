@@ -1,6 +1,9 @@
 package com.elangovan16.dungeongame;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Scanner;
 
@@ -18,17 +21,21 @@ public class Question7 {
 		int[] gold = obj.getGoldPosition(dungeon);
 		obj.addPitsInDungeon(dungeon);
 
-		int advenSteps = obj.findSteps(dungeon, gold, adven);
 		int monSteps = obj.findMinSteps(gold, mon);
-		int advenToTri = obj.findSteps(dungeon, tri, adven);
-		int triToGold = obj.findSteps(dungeon, gold, tri);
+		int advenToTri = obj.findSteps(dungeon, tri, adven).size();
+		int triToGold = obj.findSteps(dungeon, gold, tri).size();
+		int advenSteps = obj.findSteps(dungeon, gold, adven).size();
+
 		if (advenSteps < monSteps) {
 			System.out.println("Minimum number of steps : " + advenSteps);
-			obj.findPath(adven, gold, dungeon);
+			List<int[]> path = obj.findSteps(dungeon, gold, adven);
+			obj.printPath(path);
 		} else if (advenSteps != -1) {
-			System.out.println("Minimum number of steps : " + (advenToTri + triToGold));
-			obj.findPath(adven, tri, dungeon);
-			obj.findPath(tri, gold, dungeon);
+			System.out.println("Minimum number of steps : " + (advenToTri + triToGold - 2));
+			List<int[]> path1 = obj.findSteps(dungeon, tri, adven);
+			obj.printPath(path1);
+			List<int[]> path2 = obj.findSteps(dungeon, gold, tri);
+			obj.printPath(path2);
 		} else {
 			System.out.println("No possible solution");
 		}
@@ -85,25 +92,27 @@ public class Question7 {
 		}
 	}
 
-	private int findSteps(char[][] dungeon, int[] endPos, int[] curPos) {
+	private List<int[]> findSteps(char[][] dungeon, int[] endPos, int[] curPos) {
 		int rows = dungeon.length;
 		int cols = dungeon[0].length;
 
 		int[][] directions = { { -1, 0 }, { 1, 0 }, { 0, -1 }, { 0, 1 } };
 
 		boolean[][] visited = new boolean[rows][cols];
-		Queue<int[]> queue = new LinkedList<>();
+		Queue<List<int[]>> queue = new LinkedList<>();
 
-		queue.offer(new int[] { curPos[0], curPos[1], 0 });
+		List<int[]> initialPath = new ArrayList<>();
+		initialPath.add(new int[] { curPos[0], curPos[1] });
+		queue.offer(initialPath);
 
 		while (!queue.isEmpty()) {
-			int[] cur = queue.poll();
-			int curRow = cur[0];
-			int curCol = cur[1];
-			int curSteps = cur[2];
+			List<int[]> currentPath = queue.poll();
+			int[] lastPosition = currentPath.get(currentPath.size() - 1);
+			int curRow = lastPosition[0];
+			int curCol = lastPosition[1];
 
 			if (curRow == endPos[0] && curCol == endPos[1]) {
-				return curSteps;
+				return currentPath;
 			}
 
 			for (int[] dir : directions) {
@@ -112,41 +121,16 @@ public class Question7 {
 
 				if (newRow >= 0 && newRow < rows && newCol >= 0 && newCol < cols && !visited[newRow][newCol]
 						&& dungeon[newRow][newCol] != 'P') {
-					queue.offer(new int[] { newRow, newCol, curSteps + 1 });
+					List<int[]> newPath = new ArrayList<>(currentPath);
+					newPath.add(new int[] { newRow, newCol });
+
+					queue.offer(newPath);
 					visited[newRow][newCol] = true;
 				}
 			}
 		}
 
-		return -1;
-	}
-
-	private void findPath(int[] adven, int[] gold, char[][] dungeon) {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Path: ");
-
-		while (adven[1] != gold[1]) {
-			sb.append("(" + (adven[0] + 1) + "," + (adven[1] + 1) + ") --> ");
-			if (adven[1] > gold[1] && dungeon[adven[0]][adven[1]] != 'P') {
-				adven[1] = adven[1] - 1;
-			} else if (adven[1] < gold[1] && dungeon[adven[0]][adven[1]] != 'P') {
-				adven[1] = adven[1] + 1;
-			} else {
-				break;
-			}
-		}
-		while (adven[0] != gold[0]) {
-			sb.append("(" + (adven[0] + 1) + "," + (adven[1] + 1) + ") --> ");
-			if (adven[0] > gold[0] && dungeon[adven[0]][adven[1]] != 'P') {
-				adven[0] = adven[0] - 1;
-			} else if (adven[0] < gold[0] && dungeon[adven[0]][adven[1]] != 'P') {
-				adven[0] = adven[0] + 1;
-			} else {
-				break;
-			}
-		}
-		sb.append("(" + (adven[0] + 1) + "," + (adven[1] + 1) + ")");
-		System.out.println(sb.toString());
+		return Collections.emptyList();
 	}
 
 	private int findMinSteps(int[] gold, int[] pos) {
@@ -154,4 +138,13 @@ public class Question7 {
 		int ydiff = Math.abs(gold[1] - pos[1]);
 		return xdiff + ydiff;
 	}
+
+	private void printPath(List<int[]> path) {
+		System.out.print("Path: ");
+		for (int[] position : path) {
+			System.out.print("(" + (position[0] + 1) + "," + (position[1] + 1) + ") --> ");
+		}
+		System.out.println("End");
+	}
+
 }

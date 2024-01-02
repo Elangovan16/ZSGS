@@ -8,5 +8,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="lib" path="gson-2.10.1.jar"/>
 	<classpathentry kind="lib" path="json-simple-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/elangovan/JAVA JARS/mysql-connector-j-8.2.0/mysql-connector-j-8.2.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

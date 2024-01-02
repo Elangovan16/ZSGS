@@ -1,6 +1,5 @@
 package com.elangovan16.rolehierarchy.view;
 
-import java.io.File;
 import java.util.Scanner;
 
 import com.elangovan16.rolehierarchy.util.Get;
@@ -15,11 +14,10 @@ public class RoleHierarchyView {
 
 	public void start() {
 		boolean flag = true;
-		File file = new File("src/com/elangovan16/rolehierarchy/repository/Data.json");
-		roleHierarchyViewModel.initiateJSONObject();
 		Scanner sc = new Scanner(System.in);
+		int n = roleHierarchyViewModel.getRoleCount();
 		do {
-			if (file.length() > 3) {
+			if (n > 0) {
 				info();
 				byte choice = Get.getByte();
 				switch (choice) {
@@ -27,14 +25,16 @@ public class RoleHierarchyView {
 					flag = false;
 				}
 				case 1 -> {
-					System.out.print("Enter Sub-Role Name : ");
-					String subRole = sc.nextLine();
-					System.out.print("Enter reporting to role name : ");
-					String reportingManager = sc.nextLine();
-					roleHierarchyViewModel.addSubRole(subRole, reportingManager);
+					AddRoleView addView = new AddRoleView();
+					addView.addSubRole();
 				}
 				case 2 -> {
-					roleHierarchyViewModel.displayRole();
+					DisplayRoleView displayRole = new DisplayRoleView();
+					displayRole.displayRoles();
+				}
+				case 3 -> {
+					DeleteRoleView deleteRole = new DeleteRoleView();
+					deleteRole.deleteRole();
 				}
 				default -> {
 					System.out.println("Invalid ...");
@@ -44,6 +44,7 @@ public class RoleHierarchyView {
 				System.out.print("Enter Root Role Name : ");
 				String role = sc.nextLine();
 				roleHierarchyViewModel.addRootRole(role);
+				n = roleHierarchyViewModel.getRoleCount();
 			}
 		} while (flag);
 		System.out.println("Closeing....");

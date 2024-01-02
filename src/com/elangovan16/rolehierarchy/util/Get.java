@@ -13,6 +13,8 @@ public class Get {
 				sc.nextLine();
 				return n;
 			}
+			sc.nextLine();
+			System.out.println("Enter Valid ");
 		}
 	}
 
