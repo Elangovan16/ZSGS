@@ -1,4 +1,4 @@
-###Roles Table
+### Roles Table
  ```sql
 CREATE TABLE roles (
     role_id INT PRIMARY KEY AUTO_INCREMENT,
@@ -8,7 +8,7 @@ CREATE TABLE roles (
 );
 ```
 
-###User Table
+### User Table
 ```sql
 CREATE TABLE users (
 	user_id INT PRIMARY KEY AUTO_INCREMENT,
