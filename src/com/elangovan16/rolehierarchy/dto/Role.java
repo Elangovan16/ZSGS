@@ -4,6 +4,7 @@ public class Role {
 	private int role_id;
 	private String role_name;
 	private int parent_id;
+	private String user_name;
 
 	public int getRole_id() {
 		return role_id;
@@ -28,4 +29,13 @@ public class Role {
 	public void setParent_id(int parent_id) {
 		this.parent_id = parent_id;
 	}
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
 }

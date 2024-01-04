@@ -5,23 +5,34 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class GetConnection {
-	private static String name = "root";
-	private static String password = "Elangovan@16";
-	private static String url = "jdbc:mysql://localhost:3306/roles_db";
+	private static final String name = "root";
+	private static final String password = "Elangovan@16";
+	private static final String url = "jdbc:mysql://localhost:3306/roles_db";
 	private static Connection con;
 
+	private GetConnection() {
+	}
+
 	public static Connection getConnection() {
-		try {
-			con = DriverManager.getConnection(url, name, password);
-		} catch (SQLException e) {
-			e.printStackTrace();
+		if (con == null) {
+			synchronized (GetConnection.class) {
+				if (con == null) {
+					try {
+						con = DriverManager.getConnection(url, name, password);
+					} catch (SQLException e) {
+						e.printStackTrace();
+					}
+				}
+			}
 		}
 		return con;
 	}
 
 	public static void closeConnection() {
 		try {
-			con.close();
+			if (con != null) {
+				con.close();
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

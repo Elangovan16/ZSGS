@@ -13,12 +13,11 @@ public class DisplayRoleView {
 	}
 
 	public void displayRoles() {
-		List<Role> roles = displayRoleViewModel.getDisplayRoleViewModel();
-		for (Role r : roles) {
-			System.out.println(r.getRole_name());
-			System.out.println(r.getRole_id());
-			System.out.println(r.getParent_id());
-			System.out.println();
+
+		List<String> roles = displayRoleViewModel.getDisplayRoleViewModel();
+		for (String r : roles) {
+			System.out.print(r + " ,");
 		}
+		System.out.println();
 	}
 }

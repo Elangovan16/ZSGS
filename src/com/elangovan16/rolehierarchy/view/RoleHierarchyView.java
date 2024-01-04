@@ -36,6 +36,14 @@ public class RoleHierarchyView {
 					DeleteRoleView deleteRole = new DeleteRoleView();
 					deleteRole.deleteRole();
 				}
+				case 4 -> {
+					AddUserView addUser = new AddUserView();
+					addUser.addUser();
+				}
+				case 5 -> {
+					DisplayUsersView displayUsers = new DisplayUsersView();
+					displayUsers.displayUsers();
+				}
 				default -> {
 					System.out.println("Invalid ...");
 				}
@@ -53,13 +61,13 @@ public class RoleHierarchyView {
 
 	public void info() {
 		System.out.println("+----------------------------------+");
-		System.out.println("|     OPERATIONS                   |");
+		System.out.println("|    OPERATIONS                    |");
 		System.out.println("+----------------------------------+");
 		System.out.println("| 1. Add SubRole                   |");
 		System.out.println("| 2. Display Role                  |");
 		System.out.println("| 3. Delete Role                   |");
 		System.out.println("| 4. Add User                      |");
-		System.out.println("| 5. Display Role                  |");
+		System.out.println("| 5. Display User                  |");
 		System.out.println("| 6. Display User and Sub-User     |");
 		System.out.println("| 7. Delete User                   |");
 		System.out.println("| 8. Number of users from top      |");
