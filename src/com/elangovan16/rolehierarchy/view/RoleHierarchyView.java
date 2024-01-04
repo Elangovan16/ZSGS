@@ -44,6 +44,10 @@ public class RoleHierarchyView {
 					DisplayUsersView displayUsers = new DisplayUsersView();
 					displayUsers.displayUsers();
 				}
+				case 6 -> {
+					SubUsersView displaySubUsers = new SubUsersView();
+					displaySubUsers.displaySubUsers();
+				}
 				default -> {
 					System.out.println("Invalid ...");
 				}
