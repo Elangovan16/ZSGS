@@ -2,6 +2,7 @@ package com.elangovan16.rolehierarchy.view;
 
 import java.util.Scanner;
 
+import com.elangovan16.rolehierarchy.repository.GetConnection;
 import com.elangovan16.rolehierarchy.util.Get;
 import com.elangovan16.rolehierarchy.viewmodel.RoleHierarchyViewModel;
 
@@ -61,6 +62,7 @@ public class RoleHierarchyView {
 		} while (flag);
 		System.out.println("Closeing....");
 		sc.close();
+		GetConnection.closeConnection();
 	}
 
 	public void info() {
