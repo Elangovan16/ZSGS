@@ -15,15 +15,15 @@ public class GetConnection {
 
 	public static Connection getConnection() {
 		if (con == null) {
-			synchronized (GetConnection.class) {
-				if (con == null) {
-					try {
-						con = DriverManager.getConnection(url, name, password);
-					} catch (SQLException e) {
-						e.printStackTrace();
-					}
+
+			if (con == null) {
+				try {
+					con = DriverManager.getConnection(url, name, password);
+				} catch (SQLException e) {
+					e.printStackTrace();
 				}
 			}
+
 		}
 		return con;
 	}
