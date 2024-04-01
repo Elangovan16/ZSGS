@@ -13,14 +13,14 @@ public class Question_5 {
 		System.out.print("Enter the String : ");
 		String str = sc.nextLine();
 		String res = stringToHexadecimal(str);
-		
+
 		System.out.println("\nOutput : " + res);
 		sc.close();
 	}
 
 	private static String stringToHexadecimal(String str) {
 		StringBuilder sb = new StringBuilder();
-		char[] hex = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E','F'};
+		char[] hex = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 		for (char c : str.toCharArray()) {
 			StringBuilder temp = new StringBuilder();
 			char ch = c;
